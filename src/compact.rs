@@ -53,7 +53,7 @@ impl<T: RemoteContextLoader> From<ExpansionError<T>> for CompactionError<T> {
 
 impl<T: RemoteContextLoader> fmt::Display for CompactionError<T> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        f.write_str(self.description())
+        f.write_str(&self.to_string())
     }
 }
 
